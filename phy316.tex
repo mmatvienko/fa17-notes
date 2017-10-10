@@ -1,0 +1,100 @@
+%This is my super simple Real Analysis Homework template
+
+\documentclass{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage[english]{babel}
+    \usepackage[]{amsthm} %lets us use \begin{proof}
+    \usepackage{amsmath}
+    \usepackage{gensymb}   
+    \usepackage{circuitikz}    
+    \usepackage[]{amssymb} %gives us the character \varnothing
+    
+    \title{PHY 316M}
+    \author{Marc Matvienko}
+    %This information doesn't actually show up on your document unless you use the maketitle command below
+    
+    \begin{document}
+    \maketitle %This command prints the title based on information entered above
+    
+    \section{Current}
+    Is the flow of charge in on direction.
+    Current: $$I=\frac{\Delta Q}{\Delta t} =\frac{\delta Q}{\delta t}$$
+    Current Density (current per unit area): $J = \frac{I}{A}$\\
+    $n = \text{charge carrier}$, $q = \text{charge per carrier}$, $v_d = \text{drift velocity}$
+    This can give us, \boxed{$$J = nqv_d$$}
+    
+    \subsection{Ohm's Law}
+    Usually we see Ohm's law in different forms, i.e. for a particular chunk.\\
+    Consinder some block with volume $A\dot l$, some source of energy(battery) forces current thorugh by applying an electric field.\\
+    For a uniform electric field: \boxed{$$V = El$$}
+    
+    \begin{align*}
+        \begin{split}
+            J &= \frac{I}{A} \\
+            &= \sigma E \\
+            &= \sigma \frac{V}{l}
+        \end{split}
+    \end{align*}
+   \boxed{$$\frac{V}{I} = \frac{1}{\sigma} \frac{l}{A} = \rho \frac{l}{A} = R = \text{resistance}$$}\\
+    \boxed{$$\frac{V}{I} = R$$}
+    Resistance is not resistivity (opisiton of current flow of a particular material[$\rho$])
+    Ohmic material is a material that has a constant slope on Voltage to Current graph. Most common materials like copper behave like this.
+    %Section and subsection automatically number unless you put the asterisk next to them.
+    \paragraph{Example} The resistivity of nichrome wire( heaters, toasters) is $1.5 \times 10^{-6}\Omega m$. 
+    If a household voltage of $115V$ is applied acros a $0.2mm$ radius write, $1.0m$ long, what current flows?
+    \paragraph{}$R = \rho \frac{l}{A} = \rho \frac{l}{\pi r^2} = \frac{1.5 \times 10^{-6}\Omega m \cdot 1.0 m}{(\pi (2\times 10^{-4}m)^2))} = 11.9 \Omega$    
+   
+    \subsection{Model for electric conduction}
+    \begin{itemize}
+        \item electron unergo many rapid ocllision when  $E = 0$
+        \item when $E \neq 0$, the electrons accelrate between collisions
+        \item $F = ma = qE => a = \frac{qE}{m}$
+        \item $v = v_0 + at= v_0 + \frac{qE}{m}t $
+    \end{itemize}
+    Let $\tau = \text{average collision time}$\\
+    the  $v_d = v_{avg} = <v_0> + \frac{qE}{m}\tau$\\
+    so, $J = nqv_d = nq = \frac{qE}{m}\tau = \sigma E$\\
+    so conducitvity $\sigma = \frac{nq^2\tau}{m}$\\
+    Called the Drude model or free electron mode\\
+    \boxed{$$\sigma = \frac{nq^2 \tau}{m}$$}
+    \boxed{$$\frac{1}{\sigma} = \rho$$}
+    \paragraph{Example} Assume for copper that each atom donates one free electron. What is the average time between collision for electrons in copper.?
+    \\Given: 
+    \begin{itemize}
+        \item Density$ = 8.98\frac{g}{cm^3}$
+        \item Atomic Weight $ = 63.54\frac{g}{mole}$
+        \item $\rho = 1.7 \times 10-^{-8}\Omega\cdot m$
+    \end{itemize}
+    $\tau = \frac{m}{nq^2\rho}=\frac{9.14 \times 10^{-31}kg}{(8.5\times10^22 ) (1.6\times10^{-19})^2 1.7\times10^{-8}\Omega m} = 2.5\times10^{-14}s$
+    \subsection{Temerature Dependence of resistivity}
+    \begin{itemize}
+        \item resistivities tabulated for 20 \degree celsius
+        \item for metals, $\rho$ is higher and T is higher
+        \item $\alpha = \text{linear temprature coefficient}$
+        \item over some range, \boxed{$$\rho = \rho_0 (1+ \alpha(T-T_0))$$}
+    \end{itemize}
+    As T increases, the scattering time decreases due to collisions with vibrating atoms\\
+    At higher temperatures the $\rho$ to temprature graph  is linear. But at the beginning there is residual resistvity due to impurities.
+   \paragraph{Semiconductors} The number of carriers decreases as the temperature decreases, this means that all the electrons are sticking to their atoms.
+   \section{Resistors in Series and Parallel}
+    Circuit symbol: 
+    \begin{circuitikz}\draw
+        (0,0)to[resistor, l=$R$] (4,0)
+    ;\end{circuitikz}
+    \paragraph{In series} 
+    The resistivities add, $R_tot = R_1 + R_2 + ...$\\
+    The current ( I ) is the same everywhere too. 
+    \\\textbf{ Capacitors add in parallel. This is the opposite with resistors}
+    \\$R_{tot} = \frac{V}{I} = \frac{V_1}{I_1} + \frac{V_2}{I_2} = R_1 + R_2$\\
+    $V = V_1 + V_2$ 
+    \\The voltage divider $V_1 = I\cdot R_1 = \frac{V}{R_1 + R_2}\cdot R_1$
+    \paragraph{Resistors in parallel}
+    half the resistance if two exact resistors are put in parallel    
+    \begin{itemize}
+        \item[parallel] same voltage across each element
+        \item[parallel] current divides among branches
+    \end{itemize}
+    $I = I_1 + I_2 = \frac{V}{R_1} + \frac{V}{R_2} => R_{tot} = \frac{V}{I} = \frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}$
+    \paragraph{Superconductors} Electrons pair up and when electron jumps to the lattice another electrons pulls it right back.
+    
+\end{document}
