@@ -60,7 +60,7 @@
         \item $F = ma = qE => a = \frac{qE}{m}$
         \item $v = v_0 + at= v_0 + \frac{qE}{m}t $
     \end{itemize}
-    Let $\tau = \text{average collision time}$\\
+    Let $\tau = \text{average collision time} = R\cdot C$\\
     the  $v_d = v_{avg} = <v_0> + \frac{qE}{m}\tau$\\
     so, $J = nqv_d = nq = \frac{qE}{m}\tau = \sigma E$\\
     so conducitvity $\sigma = \frac{nq^2\tau}{m}$\\
@@ -175,4 +175,35 @@
     \end{itemize}
     \paragraph{Next: Circuits with Capacitors} will see time-depedent behavior
     Before ``transient phenomena'', look at \textit{Steady-state}: ``after a long time''. The capacitor starts acting like the current is 0.
+
+    \section{Magnetism}
+    We saw: $$F = qv\frac{\mu_0 I}{2\pi r} = 0$$
+    for $\vec{v}$ tangent to circle.
+    where $\mu_0 = 4\pi \times 10^{-7} \frac{Ns^2}{C^2}$\\
+    Rewrite this as $$\boxed{$$\vec{F} = q\vec{v}\times \vec{B}$$}$$
+    where \boxed{$$B = \frac{\mu_0 I}{2 \pi r}$$} magentic field due to a long wire where direciton of $\vec{B}$ is tangent to circle.
+    \\If also electric force, combination of electric and magnetic force is called ``Lorentz Force'' $$\vec{F} = q\vec{E} + q\vec{v}\times \vec{B}$$
+    $\vec{F} = q\vec{v}\times \vec{B}$
+    \begin{itemize}
+        \item Like $\vec{E}, \vec{F}$ opposite for $+q, -q$
+        \item Depends on $\vec{v}: \vec{F} = 0 \text{ for } \vec{v} = 0$
+        \item Depends on angle : \boxed{$$\lvert\vec{F}\rvert = \lvert q \rvert v B sin\Theta$$}\\
+        notice $\vec{F} = 0$ for $\vec{v} \parallel \vec{B}$
+        \item Direction $\vec{F} = q\vec{v}\times\vec{B}$ given by right hand rule
+    \end{itemize}
+    Magnetic field does no work because the magnetic force is perpendcular to displacement.\\
+    So $\vec{B}$ changes direction of $\vec{v}$ but not its magnitude ($KE = \frac{1}{2}mv^2$)\\
+    Unit of B = $\frac{Ns}{Cm} = \text{tesla} = T$ also gauss $= G = 10^{-4} T$
+    \subsection{Evaluating Cross Products}
+    \begin{itemize}
+        \item [1.] Get general equation by expaning determinant 
+        $\begin{vmatrix} i & j & k \\ v_x & v_y & v_z \\ B_x & B_y & B_z\end{vmatrix} = $\\
+            $\vec{v}\times \vec{B} = i(v_yB_z-v_zB_y) - j(v_xB_z - v_zB_x) + k(v_xB_y-v_yB_x)$
+        \item [2.] Just multiply out.\\
+        know that $i \times j = k$ and that $j \times i = -k$
+        \item [5.] Magnetic field does no work
+    \end{itemize}
+
+    \section{Exam}
+    Chapters 25-28
 \end{document}
