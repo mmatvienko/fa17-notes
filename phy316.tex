@@ -1,5 +1,3 @@
-%This is my super simple Real Analysis Homework template
-
 \documentclass{article}
     \usepackage[utf8]{inputenc}
     \usepackage[english]{babel}
@@ -263,6 +261,60 @@
     \end{align*}
     
     Also, consider yourself very close to the field, $ x >> R ~ \frac{1}{x^3}$ dipole field
-    \section{Exam 2}
-    Chapters 25-28
+    \subsection{Motion in a uniform B}
+    $$ \lvert \vec{F} \rvert = \lvert q\vec{v} \times \vec{B} \rvert = qvB $$
+    $\vec{F}$ is $\bot$ to $\vec{v}$ centripetal with accelarations $a_r = \frac{v^2}{r}$
+    We saw that 
+    \begin{align*}
+        B_{\text{long wire}} &= \frac{\mu_0 I}{2\pi r}\\
+        B_{\text{solonoid}} &= \mu_0 n I \\
+        B_{\text{loop center}} &= \frac{\mu_0 I}{2R}
+    \end{align*}
+    $\text{angular velocity } \omega = ?$
+    $$r = \frac{mv}{qB}$$
+    \paragraph{Example: Mass Spectrometer}
+    \textit{Note: Electrons travel in a semi-circle in a spectrometer}
+    Electrons are accelarated through potential of $10^3 V$ ("a 1 keV electron"). 
+    They enter a region of uniform $B = 10^{-2}T$. What is the distance they are displaced?
+    $$x = 2r = 2 \frac{mv}{qB}$$\\
+    Know $m,q,B$ need to find $v$\\
+    \begin{align*}
+        \Delta KE &= \Delta PE \rightarrow \frac{1}{2}mv^2 = eV_0= \sqrt{\frac{2eV}{m}} \\
+        x &= 2\frac{m}{eB}\sqrt{\frac{2eV_0}{m}} = \frac{2}{B}\sqrt{\frac{2mV_0}{e}} = \frac{2}{(10^{-2}T)}\sqrt{\frac{2(9.11\times 10^{-31})(10^3V)}{(1.6\times 10^{-19}C)}}        
+    \end{align*}
+    \\In practice however, we are given v,B,x to get ($\frac{q}{m}$)
+
+    \paragraph{Example: Velocity Selector}region of crossed $\vec{E} + \vec{B}$\\
+    All we have to consider is $qE \textit{ -vs- } qvB$\\
+    if $qE = qvB$ then \boxed{$$v = \frac{E}{B}$$}
+
+    \subsection{Force on a current}
+    Consider positive charge travelling along x axis with $v_0$ with a $-\vec{B}\hat{y}$
+    \begin{align*}
+        F_{\text{on wire}} &= q\vec{v}\times\vec{B}\\
+        &= \frac{1}{n}\vec{j}\times\vec{B}\\
+       F_{\text{on wire}}&=\text{(\# charges)}F_{\text{on 1 charge}}\\
+       &=(nAl)\frac{1}{n}\hat{\vec{j}}\times\hat{\vec{B}}\\
+       &=lA\vec{j}\times\vec{B}\\
+       &=I\vec{l}\times\vec{B}
+    \end{align*}
+    \paragraph{Example}
+    Net force on a current loop in a uniform $\vec{B}$ is \textbf{zero}. 
+    This is true for any loop.
+    \paragraph{Example} A current I flows from the origin to $(x,y,z) = (1m,1m,0)$ and then straight to $(2m,0,0)$. In a uniform field of $\vec{B} = 5T\hat{i}$
+    \begin{align*}
+        \vec{F}_1 &= (10N)(-\hat{j} + \hat{i})\\
+        \vec{F}_2 &= (10N)(-\hat{j}-\hat{i})\\
+        \vec{F} &= (20N)-\hat{j}
+    \end{align*}
+
+    \paragraph{Example} Force on a wire segment due to a large $\parallel$ wire
+    \begin{align*}
+        B &= \frac{\mu_0 I}{2\pi r}\\
+        \vec{F} &= I_2\vec{l}\times \frac{\mu_0 I_1}{2\pi r}\\
+        &= I_2\times \frac{l \mu_0 I_1}{2\pi r}\\
+        \frac{\text{force}}{\text{length}} &= \frac{\mu_0 I_1 I_2}{2\pi r}
+    \end{align*}
+    \paragraph{Definition:}Magnetic Moment\\
+    Dipole moment ($\mu = IA$) due to a magnetic loop.
 \end{document}
