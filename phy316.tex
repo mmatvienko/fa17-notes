@@ -5,7 +5,7 @@
     \usepackage{amsmath}
     \usepackage{gensymb}   
     \usepackage{circuitikz} 
-    
+    \usepackage[margin=1in]{geometry}    
     \usepackage{mathrsfs}   
 \DeclareFontFamily{U}{calligra}{}
 \DeclareFontShape{U}{calligra}{m}{n}{<->callig15}{}
@@ -318,4 +318,45 @@
     \end{align*}
     \paragraph{Definition:}Magnetic Moment\\
     Dipole moment ($\mu = IA$) due to a magnetic loop.
+    \subsection{Torque on a current}
+    \paragraph{We saw:} $\vec{F} = I\vec{l}\times \vec{B}$
+    \paragraph{Magnetic Moment} $\vec{\mu} = I\vec{A}$\\
+    and for N loops we have $\vec{\mu} = NI\vec{A}$
+    \paragraph{we also saw that}for a loop in uniform $B \rightarrow \vec{F} = 0$. 
+    There is no force, but there is a \textbf{net torque}.
+    \paragraph{Torque on a current\\Loop in a uniform B}
+
+    \begin{align*}
+        \vec{\tau} &= \Sigma\vec{r}\times\vec{F}\\
+        \lvert \vec{\tau}\rvert &= \Sigma rFsin\theta\\
+        &= (z)(\frac{l}{z})I l B sin \theta \\
+        &= I l^2Bsin\theta \\
+        &= \mu B sin\theta \\
+        \vec{\tau} &= \vec{\mu} \times \vec{B}
+    \end{align*}
+    Where $\mu$ is the magnetic moment and $\vec{B}$ is the magnetic field.
+    \section{Magnetism in Matter}
+    \paragraph{} Comes from some sort of current loop in matter. Perhaps an electron traveling around a proton, that is a current loop. 
+    \paragraph{Example} Consider the oribting elctron as current:
+    $$I = \frac{\Delta Q}{\Delta t} = \frac{e}{T} = \frac{e}{(2\pi r) / v} = \frac{e\cdot v}{2\pi r}$$
+    $$\mu = IA = \frac{e\cdot v}{2\pi r} \cdot \pi r^2 = \frac{1}{2}evr$$
+    Recall that angular momentum is $\vec{l} = \vec{r} \times \vec{p}$ and therefore \boxed{$$l=mvr$$}
+    $$\mu = \frac{e}{2m}mvr = \frac{e}{2m}l$$
+    \\An atom can have many electrons $\vec{L} = \Sigma \vec{l_i}$ and that $\mu = -\frac{e}{2m}\vec{L}$
+    \subsection{Quantum Mechanics} $\vec{l}$ is quantized: $l = 0, \hbar, 2\hbar, ...$ 
+    When $\hbar = \frac{h}{2\pi} = 1.06\times 10^{-34}J$ where h = Planck's constant = $6.63\times 10^{-34}J$. 
+    Ultimately, the spin of atom does not really exist, but it behaves like it is. Its ``spin'' would be $s = \frac{\hbar}{2}$
+    $$\text{Adding total angular momentum } \vec{J} = \vec{L} + \vec{S}$$
+    When $l = \hbar$ we have the smallest possible moment. $\mu = \frac{e\hbar}{2m} = \text{Bohr magneton} = 9.27\times 10^{-24}J/T$
+    \subsection{Magnetization}
+    \paragraph{Definition} Magnetization $ = M = \frac{\mu}{(volume)} = $ magnetic moment per unit volume. 
+    \paragraph{The total field}In an external lfield, some moments align and they produce their own field, $\vec{B}_{matter}$.
+    With our definitions, $B_{\text{matter}} = \mu_0 M$, so the total field $\vec{B} = \vec{B}_{ext} + \mu_0\vec{M}$. 
+    For many field $\vec{B} \propto \vec{B}_{ext}$. 
+    Really we can say that $\vec{B} = K_m \vec{B}_{ext}$ where $K_m = $ magnetic permeability or just the permeability constant.
+    \paragraph{Vaccum} $K_m = 1$ 
+    \paragraph{Diamagnet} in most materials $K_m - 1 \approx 10^{-6} - 10^{-4} \approx -10^{-5}$ because they have closed shells
+    \paragraph{Ferromagnet} $K_m >> 1$ have locked moments due to Pauli exclusion principle. 
+    \paragraph{Superconductors} Type I superconductors have a $K_m = 0$, which means they shield the cternal field.
+    \paragraph{Magnetic Susceptibility} $\chi_m = K_m - 1$ \boxed{$$\frac{\mu_0M}{B_{ext}}$$}
 \end{document}
