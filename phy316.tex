@@ -7,6 +7,8 @@
     \usepackage{circuitikz} 
     \usepackage[margin=1in]{geometry}    
     \usepackage{mathrsfs}   
+    \newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
+    
 \DeclareFontFamily{U}{calligra}{}
 \DeclareFontShape{U}{calligra}{m}{n}{<->callig15}{}
 \newcommand{\calE}{{\!\!\text{\usefont{U}{calligra}{m}{n}E}\,\,}}
@@ -359,4 +361,48 @@
     \paragraph{Ferromagnet} $K_m >> 1$ have locked moments due to Pauli exclusion principle. 
     \paragraph{Superconductors} Type I superconductors have a $K_m = 0$, which means they shield the cternal field.
     \paragraph{Magnetic Susceptibility} $\chi_m = K_m - 1$ \boxed{$$\frac{\mu_0M}{B_{ext}}$$}
+    
+    \subsection{Hall Effects}
+    \subsubsection{Hall effect}is used for measuring the charge carrier dnesity $n$ (or, for known $n$, can measure B  or map B)
+    \begin{description}
+    \item Consider a current $I \text{ and a } \perp \vec{B}$
+    \item Carrier experience $\vec{F} = q\vec{v} \times\vec{B}$, deflext and build up on surface with their transverse electric field balances magnetic force
+    until $qE_t = qv_dB$
+    \item We measure the (transverse) ``Hall Voltage'' $V_H = E_td$
+    \item Use current density $j = \frac{I}{A} = \frac{I}{dl} = nqv_l \rightarrow v_d = \frac{I}{nqdl}$ (1)
+    and $F_e = F_m \rightarrow E_t = v_dB \rightarrow v_d = \frac{E_t}{B}$ (2)
+    \item Due to (1) and (2) we can say $\frac{E_t}{B} = \frac{I}{nqdl}$
+    and $V_H = E_td \rightarrow \frac{V_H}{Bd} = \frac{I}{nqdl} \rightarrow$ \boxed{$$ n = \frac{IB}{V_Hql}$$}
+    \end{description}
+        
+    \subsubsection{Motional EMF} 
+    This gives us Magnetic Flux and Faraday's Law\\
+    Instead of a current procing a Hall Voltage, we can just $\vec{v} \perp \vec{B}$. 
+    Ions are stuck, but electrons can move, until $qE_t = qvB$ and get a transverse voltage.
+    Called a \textbf{motional EMF}. \boxed{$$\calE = E_tl = Blv$$}. We will see many ways to get EMF by ``sweeping past B field''
+
+    \subsection{Faraday's Law}
+    \subsubsection{Preperation}
+    $\calE = Blv$\\ Before looking at Faraday's Law define Magnetic Flux $\Phi _m = \int \vec{B}\cdot d\vec{A} = \vec{B}\vec{A} = BAcos\Theta$. We will be interested in ``flux through a current loop''.
+    \paragraph{Example} A long solenoid with current $I$ and $n$ turns/meter, radius $R_2$ contains a loop of radius $R_1 \perp$ to solenoid axis. 
+    Find flux through loop. Remember: \boxed{$$B_\text{solenoid} = \mu_0nI$$}.
+    \\$$\Phi _m = \int \vec{B}\cdot d\vec{A} = \vec{B}\cdot \vec{A} = BA = (\mu_0 n I)(\pi R_1^2)$$
+    Will only get an induced voltage if something is moving though.
+    \paragraph{Example} A rectangular loop is ?? in plane of a long wire carrying current I. From wire to one end of rectangle is a, and to other end is b.
+    \\Remember that B is not uniform. $$\Phi _m = \int \vec{B}\cdot d\vec{A} \underrel{\vec{B}\perp\vec{A}}{=} \int BdA 
+    = \int_a^B \frac{\mu_0 I}{2\pi r} l dr= \frac{\mu_0 I l}{2\pi}\int_a^b \frac{1}{r} dr = \frac{\mu_0 I l}{2\pi} ln(b/a) $$
+
+    \subsubsection{Content}
+    A changing magnetic flux induces a current/voltage aroud a loop. 
+    If $\Phi _m$ is the flux though surface then the voltage around that surface is 
+    $$\calE = -\frac{\partial \Phi _m}{\partial t}$$
+    If N loops on a coil then $$\calE = -N\frac{\partial \Phi _m}{\partial t}$$
+    \paragraph{Example} A loop of wire with resistance R is partly in a region of uniform B and is pushed in at a constant $v$. What happens?
+    $$\Phi = BA = Blx$$
+    Farady: $\calE =\frac{d\Phi}{dt} = -\frac{d}{d t}Blx = Bl \frac{dx}{dt} = -lv$. If loop sis clsed, current flows. $I = \frac{\calE}{R} = -\frac{Blv}{R}$. 
+    Energy designated: $P = I^2R = \frac{B^2l^2v^2}{R}$. Another view: $\vec{F} = I\vec{l} \times \vec{B} = I;B = \frac{Blv}{R}lB$
+    Hence we can say $P = Fv = \frac{B^2l^2v^2}{R}$
+    \paragraph{The sign in Faraday's Law} The ``-'' in the equation for $\calE$ is called 
+    \textbf{Lenz' Law}, which states that induced current opposes the change in flux.
+
 \end{document}
