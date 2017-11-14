@@ -382,6 +382,7 @@
     Called a \textbf{motional EMF}. \boxed{$$\calE = E_tl = Blv$$}. We will see many ways to get EMF by ``sweeping past B field''
 
     \subsection{Faraday's Law}
+    Holds for any closed path, even the object producing the flux itself.
     \subsubsection{Preperation}
     $\calE = Blv$\\ Before looking at Faraday's Law define Magnetic Flux $\Phi _m = \int \vec{B}\cdot d\vec{A} = \vec{B}\vec{A} = BAcos\Theta$. We will be interested in ``flux through a current loop''.
     \paragraph{Example} A long solenoid with current $I$ and $n$ turns/meter, radius $R_2$ contains a loop of radius $R_1 \perp$ to solenoid axis. 
@@ -398,11 +399,82 @@
     $$\calE = -\frac{\partial \Phi _m}{\partial t}$$
     If N loops on a coil then $$\calE = -N\frac{\partial \Phi _m}{\partial t}$$
     \paragraph{Example} A loop of wire with resistance R is partly in a region of uniform B and is pushed in at a constant $v$. What happens?
-    $$\Phi = BA = Blx$$
-    Farady: $\calE =\frac{d\Phi}{dt} = -\frac{d}{d t}Blx = Bl \frac{dx}{dt} = -lv$. If loop sis clsed, current flows. $I = \frac{\calE}{R} = -\frac{Blv}{R}$. 
-    Energy designated: $P = I^2R = \frac{B^2l^2v^2}{R}$. Another view: $\vec{F} = I\vec{l} \times \vec{B} = I;B = \frac{Blv}{R}lB$
-    Hence we can say $P = Fv = \frac{B^2l^2v^2}{R}$
+    
+    \begin{description}
+        \item $$\Phi = BA = Blx$$
+        \item Faraday: $\calE =\frac{d\Phi}{dt} = -\frac{d}{d t}Blx = Bl \frac{dx}{dt} = -lv$. If loop is closed, current flows. $I = \frac{\calE}{R} = -\frac{Blv}{R}$. 
+        \item Energy designated: $P = I^2R = \frac{B^2l^2v^2}{R}$. Another view: $\vec{F} = I\vec{l} \times \vec{B} = I;B = \frac{Blv}{R}lB$
+        \item Hence we can say $P = Fv = \frac{B^2l^2v^2}{R}$
+    \end{description}
+    
     \paragraph{The sign in Faraday's Law} The ``-'' in the equation for $\calE$ is called 
     \textbf{Lenz' Law}, which states that induced current opposes the change in flux.
+    \begin{description}
+    \item We saw the EMF of a moving rod $\calE = Blv$
+    \item Faraday's Law $\calE = -\frac{d\Phi}{dt}$, and Lenz' law tells us that the negative is there.
+    \item $\Phi = \int \vec{B}d\vec{A} = BA cos\theta$
+    \item $\calE = -\frac{d}{dt}(BAcos\theta) = Acos\theta \frac{dB}{dt}$    
+    \end{description}
+    \paragraph{Example} A rectabular loop with horizontal side of length 1m,
+    loop resistance $0.1\Omega$, and a mass of $0.1kg$, is dropping out of 
+    a region of uniform $B = 2T$. What is its terminal velocity?
+    \begin{description}
+    \item $F_{net} = 0 = F_g+F_m$
+    \item We know induced voltage $\calE = Blv \rightarrow I = \frac{Blv}{R}$
+    \item So $\lvert F_m \rvert = \lvert I\vec{L} \times \vec{B}\rvert = IlB = \frac{B^2l^2v}{R} \rightarrow \frac{B^2l^2v}{R} = mg$
+    \item $v = \frac{mgR}{B^2l^2} = \frac{(0.1kg)(9.8m/s^2)(0.1\Omega)}{(2T)^2(1m)^2}$
+    \end{description}
+    \paragraph{Example}Two concentric loops with $R_1 = 1m$ and $R_2 = 1cm$. 
+    Current in \#1 is increasing is increasing at $2A/s$. What is the Emf induced in loop \#2
+    \begin{description}
+        \item We know that $B_{\text{center of loop}} = \frac{\mu_0 I_1}{2R_1}$
+        \item Then EMF $\calE = -\frac{d\Phi}{dt} =-\frac{d}{dt}BA = -\pi R_2^2\frac{dB}{dt}$
+        \item or $\calE _2 = -\pi R^2_2\frac{d}{dt}\frac{\mu_0I_1}{2R_1} = -\frac{\pi R_2^2\mu_0 dI_1}{2R_1dt})$
+        \item So we can get $\calE _2 = \frac{-\pi (0.01m)^2(4\pi\times10^{-7})}{2(1m)}(2A/s) = -4\times10^{-10}V = -400pV$
+        \item Common situation: $\calE = -(\text{constant})\frac{dI_1}{dt}$
+        \item We define $\calE_2 = -M_{12}\frac{dI_1}{dt}$
+        \item Big / small loops = $M_{12} = \frac{\pi R_2^2\mu_0}{2R_1}$
+    \end{description}
+    \paragraph{DC generator} Mechanical input creates electric output.
+    Where $\theta = \omega t =$ rotations of the generator
+    \begin{align*}
+        \calE &= -\frac{d}{dt}BAcos\theta\\
+        &= -BA \frac{d}{dt}cos\omega t\\
+        &= \omega BAsin\omega t
+    \end{align*}
 
+    What is ``induced voltage around loop''? Even if no loop (no wire), to have voltage we must have an $\vec{E}$ field in space.
+    \paragraph{Note} Different $\vec{E}$ arrangement than in electrostatics.
+    \begin{description}
+        \item Electrostatics: $V = \int \vec{E}\cdot d\vec{s}$, and also $\oint \vec{E}\cdot d\vec{s} = 0$
+        \item But $\vec{E}$ fields to to changing $\vec{B}$, hence, $\calE = \oint \vec{E}\cdot d\vec{s} \neq 0$
+        \item So we can have ``non-conservative'' fields
+    \end{description}
+    \paragraph{Note} Similarity beteween Ampere;s Law and Faraday's Law 
+    \paragraph{Ampere's}
+    \begin{align*}
+        \oint\vec{B}\cdot d\vec{s} &= \mu_0 I\\
+        B(2\pi r) &= \mu_0 I \\
+        B &= \frac{\mu_0 I}{2\pi r}
+    \end{align*}
+    \paragraph{Faraday's}
+    \begin{align*}
+        \calE = \oint\vec{E} \cdot d\vec{s} &= -\frac{d\Phi_m}{dt}\\
+        E(2\pi r) &= \frac{d\Phi}{dt}\\
+        E &= -\frac{-\frac{d\Phi}{dt}}{2\pi r}
+    \end{align*}
+    \begin{itemize}
+        \item $r < R$ : $\Phi = \pi r^2 B \rightarrow E = \frac{r dB}{2 dt}$
+        \item $r > R$ : $\Phi = \pi R^2B \rightarrow E = \frac{E^2 dB}{2r dt}$
+    \end{itemize}
+    \paragraph{Note} Electromagnetic safety suggests that one change B slowly to avoid a larg $\vec{E}$
+    \paragraph{Example}Rotating rod in magnetic field. Held at one end and spins in magnetic field.
+    Length l and spin of $\omega$. To get induced voltage do:
+    \begin{align*}
+        \calE &= -\frac{d}{dt}BA\\
+        &= -B\frac{dA}{dt}\\
+        &=-B\frac{\Delta A}{\Delta t}\\
+        &= - B\frac{(\pi l^2)}{2\pi/\omega}\\
+        &= -\frac{B\omega l^2}{2}
+    \end{align*}
 \end{document}
