@@ -21,7 +21,7 @@
     
     \begin{document}
     \maketitle %This command prints the title based on information entered above
-    
+    \tableofcontents
     \section{Capacitors}
     $C = \lvert\frac{Q}{V}\rvert$
 
@@ -75,7 +75,7 @@
         \item $\rho = 1.7 \times 10-^{-8}\Omega\cdot m$
     \end{itemize}
     $\tau = \frac{m}{nq^2\rho}=\frac{9.14 \times 10^{-31}kg}{(8.5\times10^22 ) (1.6\times10^{-19})^2 1.7\times10^{-8}\Omega m} = 2.5\times10^{-14}s$
-    \subsection{Temerature Dependence of resistivity}
+    \subsection{Temperature Dependence of resistivity}
     \begin{itemize}
         \item resistivities tabulated for 20 \degree celsius
         \item for metals, $\rho$ is higher and T is higher
@@ -85,7 +85,7 @@
     As T increases, the scattering time decreases due to collisions with vibrating atoms\\
     At higher temperatures the $\rho$ to temprature graph  is linear. But at the beginning there is residual resistvity due to impurities.
    \paragraph{Semiconductors} The number of carriers decreases as the temperature decreases, this means that all the electrons are sticking to their atoms.
-   \section{Resistors in Series and Parallel}
+   \section{Resistors}
     Circuit symbol: 
     \begin{circuitikz}\draw
         (0,0)to[resistor, l=$R$] (4,0)
@@ -203,7 +203,7 @@
         know that $i \times j = k$ and that $j \times i = -k$
         \item [5.] Magnetic field does no work
     \end{itemize}
-    \subsection{Two ways to Find $\vec{B}$}
+    \subsection{Ampere's and Biot Savart Law}
     \begin{enumerate}
         \item Ampere's Law: for high symmetry
         \item Biot Savart Law
@@ -264,7 +264,7 @@
     \end{align*}
     
     Also, consider yourself very close to the field, $ x >> R ~ \frac{1}{x^3}$ dipole field
-    \subsection{Motion in a uniform B}
+    \subsection{Motion in a uniform $\vec{B}$}
     $$ \lvert \vec{F} \rvert = \lvert q\vec{v} \times \vec{B} \rvert = qvB $$
     $\vec{F}$ is $\bot$ to $\vec{v}$ centripetal with accelarations $a_r = \frac{v^2}{r}$
     We saw that 
@@ -337,7 +337,7 @@
         \vec{\tau} &= \vec{\mu} \times \vec{B}
     \end{align*}
     Where $\mu$ is the magnetic moment and $\vec{B}$ is the magnetic field.
-    \section{Magnetism in Matter}
+    \section{Magnetism and Matter}
     \paragraph{} Comes from some sort of current loop in matter. Perhaps an electron traveling around a proton, that is a current loop. 
     \paragraph{Example} Consider the oribting elctron as current:
     $$I = \frac{\Delta Q}{\Delta t} = \frac{e}{T} = \frac{e}{(2\pi r) / v} = \frac{e\cdot v}{2\pi r}$$
@@ -381,9 +381,9 @@
     Ions are stuck, but electrons can move, until $qE_t = qvB$ and get a transverse voltage.
     Called a \textbf{motional EMF}. \boxed{$$\calE = E_tl = Blv$$}. We will see many ways to get EMF by ``sweeping past B field''
 
-    \subsection{Faraday's Law}
+    \section{Faraday's Law}
     Holds for any closed path, even the object producing the flux itself.
-    \subsubsection{Preperation}
+    \subsection{Preperation}
     $\calE = Blv$\\ Before looking at Faraday's Law define Magnetic Flux $\Phi _m = \int \vec{B}\cdot d\vec{A} = \vec{B}\vec{A} = BAcos\Theta$. We will be interested in ``flux through a current loop''.
     \paragraph{Example} A long solenoid with current $I$ and $n$ turns/meter, radius $R_2$ contains a loop of radius $R_1 \perp$ to solenoid axis. 
     Find flux through loop. Remember: \boxed{$$B_\text{solenoid} = \mu_0nI$$}.
@@ -393,11 +393,12 @@
     \\Remember that B is not uniform. $$\Phi _m = \int \vec{B}\cdot d\vec{A} \underrel{\vec{B}\perp\vec{A}}{=} \int BdA 
     = \int_a^B \frac{\mu_0 I}{2\pi r} l dr= \frac{\mu_0 I l}{2\pi}\int_a^b \frac{1}{r} dr = \frac{\mu_0 I l}{2\pi} ln(b/a) $$
 
-    \subsubsection{Content}
+    \subsection{Content}
     A changing magnetic flux induces a current/voltage aroud a loop. 
     If $\Phi _m$ is the flux though surface then the voltage around that surface is 
     $$\calE = -\frac{\partial \Phi _m}{\partial t}$$
     If N loops on a coil then $$\calE = -N\frac{\partial \Phi _m}{\partial t}$$
+
     \paragraph{Example} A loop of wire with resistance R is partly in a region of uniform B and is pushed in at a constant $v$. What happens?
     
     \begin{description}
@@ -435,7 +436,7 @@
         \item We define $\calE_2 = -M_{12}\frac{dI_1}{dt}$
         \item Big / small loops = $M_{12} = \frac{\pi R_2^2\mu_0}{2R_1}$
     \end{description}
-    \paragraph{DC generator} Mechanical input creates electric output.
+    \subsection{DC generator} Mechanical input creates electric output.
     Where $\theta = \omega t =$ rotations of the generator
     \begin{align*}
         \calE &= -\frac{d}{dt}BAcos\theta\\
@@ -447,10 +448,10 @@
     \paragraph{Note} Different $\vec{E}$ arrangement than in electrostatics.
     \begin{description}
         \item Electrostatics: $V = \int \vec{E}\cdot d\vec{s}$, and also $\oint \vec{E}\cdot d\vec{s} = 0$
-        \item But $\vec{E}$ fields to to changing $\vec{B}$, hence, $\calE = \oint \vec{E}\cdot d\vec{s} \neq 0$
+        \item But $\vec{E}$ fields due to changing $\vec{B}$, hence, $\calE = \oint \vec{E}\cdot d\vec{s} \neq 0$
         \item So we can have ``non-conservative'' fields
     \end{description}
-    \paragraph{Note} Similarity beteween Ampere;s Law and Faraday's Law 
+    \paragraph{Note} Similarity beteween Ampere's Law and Faraday's Law 
     \paragraph{Ampere's}
     \begin{align*}
         \oint\vec{B}\cdot d\vec{s} &= \mu_0 I\\
@@ -477,4 +478,206 @@
         &= - B\frac{(\pi l^2)}{2\pi/\omega}\\
         &= -\frac{B\omega l^2}{2}
     \end{align*}
-\end{document}
+    \section{Inductance}
+    For this recall, $\calE = -N\frac{d\Phi_M}{dt}$. This holds true for any closed path around $\Phi$.
+    In particular, the changing current induces a voltage across the source itself.
+    \begin{description}
+        \item N is the number of turns
+        \item $n = \frac{N}{l}$
+        \item $B = \mu_0\frac{N}{l}I$
+        \item So due to Faraday's law we can say that 
+        \begin{align*}
+            \calE &= -N\frac{d\Phi}{dt}\\
+            &= -N\frac{d}{dt}(BA)\\
+            &= -N\frac{d}{dt}(\mu_0\frac{N}{l}I)(A)\\
+            &= -\frac{\mu_0N^2A}{l}\frac{dI}{dt}
+        \end{align*}
+    \end{description}
+    \paragraph{Main feature}voltage indeed is proportianl to rate of change of current. 
+    \\Constant of proportionality = L = ``self-inductance'' or  ``inductance''. \boxed{$$\calE = -L\frac{dI}{dt}$$}
+    \\Similar, but opposite, to capacitance: $q=Cv$ or $\frac{dq}{dt} = C\frac{dV}{dt} = i$. 
+    For magnetic fields $N\Phi \propto B \propto I_{\text{changing flux}}$.
+    We can hence write, \boxed{$$N\Phi = LI$$}
+    $\frac{d}{dt} \rightarrow -N\frac{d\Phi}{dt} = -L\frac{dI}{dt} \rightarrow$\boxed{$$v_L = -L\frac{dI}{dt}$$} this is also known as ``back emf''.
+    Above for solenoid, \boxed{$$L = \frac{\mu_0 N^2}{l}A$$}. The unit of L is a henry, is in units of H $= \frac{V{-s}}{A}$.
+    \paragraph{Note} If you fill coil with magnetic momtvial with permiability $K_m$ then $L = K_mL_0$.
+    \\ Inductor symbols are: \\
+    \begin{tikzpicture} 
+        \draw (0,0) to[cute inductor] (3,0) ; 
+        \node [below=5pt] at (1.5,0) {cute inductor};
+    
+        \draw (4,0) to[american inductor] (7,0) ; 
+        \node [below=5pt] at (5.5,0) {american inductor};
+    \end{tikzpicture}
+    \subsection{RL circuits}
+    \begin{enumerate}
+        \item Steady state i.e. ``after a long time''. i is constant, $\frac{di}{dt}$\\
+        \begin{circuitikz}\draw
+            (-2,0)to[battery,l=$12V$](2,0)
+            (2,0)to(2,2)
+            (2,2)to[cute inductor](0,2)
+            (0,2)to[resistor](-2,2)
+            (-2,0)to(-2,2)
+        ;\end{circuitikz}\\
+        $v_L = -L\frac{di}{dt} = 0$
+        \item Reponse to a sudden change in DC\\
+        \begin{circuitikz}\draw
+            (0,0)to[resistor](3,0)
+            (0,0)to[battery](0,1)            
+            (0,1)to[switch](3,1)
+            (3,1)to[cute inductor](3,0)
+        ;\end{circuitikz}\\
+        \begin{align*}
+            V_0 - L\frac{dI}{dt} - IR &= 0\\
+            V_0 - IR &= L\frac{dI}{dt}\\
+            I - \frac{V_0}{R} &= -\frac{L}{R}\frac{dI}{dt}\\
+            \frac{dI}{I-V_0/R} &= -\frac{R}{L}dt\\
+            \int_0^i\frac{dI}{I-V_0/R} &= -\frac{R}{L}\int^t_0dt\\
+            ln[\frac{i-V_0/R}{-V_0/R}] &= -\frac{R}{L}t\\
+            \frac{i-V_0/R}{-V_0/R} &= e^{-\frac{R}{L}t}
+        \end{align*}
+        So, 
+        \begin{align*}
+            v_L = -L\frac{dI}{dt} &= -L [\frac{d}{dt}(\frac{V_0}{R}(1-e^{-\frac{R}{L}t}))]\\
+            &= -L\frac{V_0}{R}(e^{-\frac{R}{L}t})(-\frac{R}{L}) \\
+            &= V_0e^{-\frac{R}{L}t}
+        \end{align*}
+        If we have switch in position 1 for a logn time $\frac{R}{L}t \rightarrow I = \frac{V_0}{R}$\\
+        Switch to position 2 of $t=0$
+    \subsubsection{Loop Theorem} $-L\frac{dI}{dt} - IR = 0$
+        $$\int^{I_0}_I\frac{dI}{I} = -\int^t_0\frac{R}{L}dt \rightarrow ln(\frac{I}{I_0}) = -\frac{R}{L}t$$
+    \end{enumerate}
+    \subsection{Energy Stored Inductors}
+    Power is $P = IV = \frac{dV}{dt}$, inductor $\frac{dV}{dt} = I (L\frac{dI}{dt})$,
+    or $dI$ gives $dV$: $dV = LIdI$. 
+    $V = \int dV = L \int^I_0IdI = LI^2\frac{1}{2}$
+    Energy in inductor \boxed{$$V_L = \frac{1}{2}LI^2$$}
+    \paragraph{Potential energy} One can think of this U as stored in B field
+    \paragraph{Definition}magnetic energy per unit volume $$u_b = \frac{U_L}{\text{volume}} = \frac{1}{2\mu_0}B^2$$
+    \section{Oscillators}
+    Remember the formula for induction and L-R circuits
+    Today we will discuss:
+    \begin{enumerate}
+        \item Free oscillations \textbf{LC, LRC}
+        \item Forced oscillations \textbf{R, C , Power}
+    \end{enumerate}
+    \subsection{Natural/Free}
+    \paragraph{}Combination of L and C is an oscillators
+    \begin{itemize}
+        \item First charge $C \text{ to } Q_0 = CV_0$
+        \item Connect to $L$ at $t = 0$
+    \end{itemize}
+    Since we know
+    $$I = -\frac{dQ}{dt}$$
+    Loop: 
+    \begin{align*}
+        V_c-V_l &= 0 \\
+        \frac{Q}{C} - L\frac{dI}{dt} &= 0 \\
+        \frac{Q}{C} + L\frac{d}{dt}(\frac{dQ}{dt}) &= 0
+    \end{align*}
+    Ultimately, we get:
+    $$\frac{d^2Q}{dt^2} + \frac{1}{LC}Q = 0$$
+    \begin{enumerate}
+        \item simplest 2nd order diff. eq.
+        \item like simple harmonic oscillator, similar to solution of $Q = Acos(\omega t) + B sin (\omega t)$
+    \end{enumerate}
+    Only possible solutions $A + B$ are constant to be detemined by initial conditions and (like $\omega = \sqrt{\frac{k}{m}}$ for spring) here,
+    \boxed{$$\omega = \frac{1}{\sqrt{LC}}$$} is the angular frequency of oscillator.
+    We can check this by substituting:
+    \begin{align*}
+        \frac{d^Q}{dt^2} &= \frac{d^2}{dt^2}(Acos(\omega t) + B sin (\omega t))\\
+        &= -\omega ^2[Acos(\omega t) + B sin (\omega t)]\\
+        &= -\omega Q\\
+        &= -\frac{1}{LC}Q\\
+        \omega ^2 &= \frac{1}{LC}\\
+        \omega &= \frac{1}{\sqrt{LC}}
+    \end{align*}
+    
+    \begin{enumerate}
+        \item at $t=0, Q_0 = 0$. Using $Q = Acos(\omega t) + B sin (\omega t)$\\
+        by plugging in time we can get $Q_0 = A$
+        \item at $t=0^+, I = 0 $(current in an inductor charges continuously)\\
+        $$0 = \frac{dQ}{dt}\rvert_{t=0} =
+        \frac{d}{dt}(Acos(\omega t) + B sin (\omega t))\rvert_{t=0} = 
+        -\omega Acos(\omega t) + \omega B sin (\omega t)\rvert_{t=0} =
+        -\omega A (0) + \omega B(1) = 
+        \omega B$$
+    \end{enumerate}
+    $$I =\frac{dQ}{dt} = -\frac{d}{dt}(Q_0cos\omega t)=\omega Q_0 sin\omega t = I_{\text{max}}sin\omega t$$
+    \paragraph{Note} Current Amplitude $I_{\text{max}} = \omega Q_0$
+    \subsection{Energy in LC oscillator ??? back and forth}
+    Between electric: $U_c = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}\frac{Q_0^2}{C}cos^2\omega t$
+     and magnetic $U_m = \frac{1}{2}LI^2 = \frac{1}{2}LI^2_\text{max}sin^2\omega t$
+     So total energy $U_e + U_m = \frac{1}{2}\frac{Q^2_0}{C}$.
+     Capacitor with inductor called ``Tank circuit''
+     \subsection{RLC Circuit (freely decaying oscillators)}
+     New energt is lost each cucle due to $I^2R$. Loop theorem tells us $\frac{Q}{C} -IR - L\frac{dI}{dt} = 0$
+     \paragraph{Equation of a damped harmonic oscillator} $\frac{Q}{C} + R\frac{dQ}{dt} + L\frac{d^2Q}{dt^2} = 0$.
+     Solution is complex, but for low damping $Q = Q_0e^{-t\frac{R}{2L}}cos(\omega _d t)$ since our charge decays.
+     The frequency $w_d$ is given approximately given by \boxed{$$\approxeq \sqrt{\frac{1}{LC} - \frac{R}{2L}^2}$$}
+     We say that if $R < \sqrt{\frac{4L}{C}}$ then we have a circuit that is ``under damped''
+     if $R = \sqrt{\frac{4L}{C}}$ ``critically damped''
+     and if $R > \sqrt{\frac{4L}{C}}$ ``over damped''
+     
+     \section{AC Circuits}
+     Forced oscillations: Apply a $v = V_0 cos(\omega t)$. We will study the steady state AC response.
+     We will ignore transience (the part where the circuit takes some time to become steady).
+     Period is $ T = \frac{2\pi}{\omega}$
+     \begin{enumerate}
+         \item Pure Resistive ``insert drawing''
+         $i = \frac{v}{R}$, $I_0 = \frac{V_0}{R}$
+     \end{enumerate}
+     \subsection{Pure C}
+     Consider an alternating circuit with a capacitor that has charge q.
+     $v = V_{max}cos(\omega t)$. Since current is 
+     $i = \frac{dq}{dt}(cv) = c\frac{d}{dt}(V_{max}cos\omega t) = -\omega CV_{max}sin(\omega t)
+     = cos (\omega t + \pi / 2 )$
+     Hence, $i = \frac{V_{max}}{1/ \omega c}cos(\omega t + \pi/2)$
+     \begin{enumerate}
+         \item Amplitudes are related by $I_{max} = \frac{V_{max}}{(1/\omega c)}$
+         \paragraph{Defintion} $\chi _c =\text{``capactive reactance''}= 1/\omega c \rightarrow$
+         opposition to AC current flow du to capacitor. we say in capactive citcuits current leads voltage by $\pi / 2 \rightarrow IC\calE$
+         So we ultimately get: $$I_{max} = \frac{V_{max}}{\chi _c}$$
+         \item and $v = V_{max}cos(\omega t)$ or $i = I_{max}cos(\omega t + \pi / 2)$
+         \item $\chi _c $ behavior:\\
+         $\omega \rightarrow 0$ gives $\chi _C = \frac{1}{\omega c} \rightarrow \infty$\\
+         $\omega \rightarrow \infty$ gives $\chi _C = \frac{1}{\omega c} \rightarrow 0$\\
+         Blocks low frequency or just DC circuits.
+     \end{enumerate}
+     \subsection{Pure L}
+     Knowing the loop theorem, we can say $di = \frac{1}{L}vdt$ 
+     and so $i = \int di = \frac{1}{L}\int v dt = \frac{1}{\omega L}V_{max}sin(\omega t)$
+     \paragraph{Defintion} $\chi _L = \text{``inductive reactance''} = \omega L$ and hence we get
+     \boxed{$$I_{max} = \frac{V_{max}}{\chi _L}$$} for amplitude.\\
+     In an inductive circuit: $\calE LI$ voltage leads current by $\pi / 2$\\
+     Opposite behavior:\\
+     $\omega \rightarrow 0$ gives $\chi _L = \frac{1}{\omega c} \rightarrow 0$\\
+     $\omega \rightarrow \infty$ gives $\chi _L = \frac{1}{\omega c} \rightarrow \infty$\\
+     Blocks high frequency.
+     \subsection{Pure R}
+     Power is $P = IV$ but really his is just $P = i^2R = (I_{max}cos\omega t)^2R$.
+     \\Interested in the average so $P_{avg} = I^2_{max}\langle cos^2\omega t \rangle R = 0.5$
+     \\So, $P_{avg} = \frac{1}{2}I^2_{max} R$ We often use ``rms'' calues instead of amplitudes.
+     \\rms is the root of the mean of the square. rms really just gives $\frac{1}{\sqrt{2}}$.
+     $I_{rms}  = \frac{1}{\sqrt{2}} I _{max}$ the same is true for voltages too. $P_{avg} = I_{rms}^2R$
+     rms values are like an effective DC (average) value.\\
+     To add voltages with idfferent phases, will want to use a \textbf{Phasor representation}.
+     A phasor is really just a rotating vector.\\
+     Any sinudoid can be represented as the x component of a rotating vector.
+     Which is always $V_{max}cos(\omega t)$
+     \paragraph{For out AC circuits} it is quite simple. 
+     \subsection{Examples}
+     These are all going to be series circuits. So lets consider an RC circuit.
+     Voltage and current are in phase across/through resistor. But voltage across capacitor largs current by $\pi / 2$.
+     $\calE = \calE _{max}cos(\omega t + \phi)$
+     So:  $\calE_{max} = \sqrt{V_R^2 + V_C^2}$ can be described that votlages add in quadratune.
+     and source hase phase with respect to current $\phi = tan^{-1}(\frac{-V_C}{V_R})$.
+     and divide by $I_{max}$: $\frac{\calE_{max}}{I_{max}} = \sqrt{\frac{V_R}{I_{max}}^2 + \frac{V_C}{I_{max}}^2} = \sqrt{R^2 + \chi _c^2} \cong Z = $ impedeance = total opposition to current flow.
+     \paragraph{Example} $\calE$ is houseold,$V_{max} = 120V, 60Hz$. 
+     Dimmer circuit: what rang eof C is needed to vary power from 10W to 100W?
+     $P = I^2_{rms} R$, want this to vary from 10 to 100.
+     First we have to figure out the current, and for this we use $I_{max} = \frac{\calE_{max}}{Z}$
+     Solve for C = $\frac{1}{\omega \sqrt{\frac{\calE_{max}^2}{P_{avg}} - R^2} }$
+     For $P_avg = 10W \rightarrow C= 7.2 \mu F$, $P_avg = 100W \rightarrow C = 40 \mu F$
+
+    \end{document}
